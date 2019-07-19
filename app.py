@@ -22,8 +22,15 @@ def callback():
     decoded = json.loads(json_line)
     user = decoded["events"][0]['replyToken']
     userText = decoded["events"][0]['message']['text']
-    sendText(user,userText)
-    return '',200
+   C#sendtext(user,userText)
+    if (usertext == 'สวัสดี') :
+        sendtext(user,'เออว่ะ')
+    elif (usertext == 'ไปล่ะ') :
+        sendtext(user,'ไปไหนก้ไปไป้')
+    else :
+        sendtext(user,'ว่าไงนะ')
+
+   return '',200
 
 def sendText(user, text):
   LINE_API = 'https://api.line.me/v2/bot/message/reply'
